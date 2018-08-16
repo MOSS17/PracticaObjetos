@@ -4,29 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrácticaObjetos
+namespace PracticaObjetos
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Persona persona1 = new Persona();
-            persona1.nombre = "Juan";
-            persona1.apellidos = "Perez";
-            persona1.edad = 20;
-            Console.WriteLine(persona1.nombre + " " + persona1.apellidos + " tiene " + persona1.edad + " años");
+            Contacto contacto1 = new Contacto();
 
-            persona1.cumplirAños();
+            contacto1.Nombre = "Pedro López";
+            contacto1.TelefonoCasa = "(644) 115 - 2514";
+            contacto1.Direccion = "Guerrero 456";
 
-            Console.WriteLine("Ahora " + persona1.nombre + " tiene " + persona1.edad + " años");
+            Console.WriteLine("Nombre: " + contacto1.Nombre);
+            Console.WriteLine("Teléfono de casa: " + contacto1.TelefonoCasa);
 
-            persona1.altura = 1.5f;
+            Contacto contacto2 = new Contacto("Juan Pérez");
+            Console.WriteLine("Contacto 2");
+            Console.WriteLine("Nombre: " + contacto2.Nombre);
 
-            Console.WriteLine(persona1.nombre + " mide " + persona1.altura);
-
-            persona1.crecer(0.12f);
-
-            Console.WriteLine(persona1.nombre + " ahora mide: " + persona1.altura);
+            Contacto contacto3 = new Contacto("Maria Navarro", "1234567890", "9876543210", "5 de febrero 895", "maria@correo.com");
+            Console.WriteLine("Contact 3");
+            Console.WriteLine("Nombre: " + contacto3.Nombre);
+            Console.WriteLine("Celular: " + contacto3.TelefonoCelular);
+            Console.WriteLine("Casa: " + contacto3.TelefonoCasa);
+            Console.WriteLine("Dirección: " + contacto3.Direccion);
+            Console.WriteLine("Correo: " + contacto3.CorreoElectronico);
 
             Console.ReadLine();
         }
